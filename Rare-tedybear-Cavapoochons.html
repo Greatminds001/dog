@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>101-dog service || Pets</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    line-height: 1.5;
+}
+.card-wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.img-display{
+    overflow: hidden;
+}
+.img-showcase{
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.img-showcase img{
+    min-width: 100%;
+}
+.img-select{
+    display: flex;
+}
+.img-item{
+    margin: 0.3rem;
+}
+.img-item:nth-child(1),
+.img-item:nth-child(2),
+.img-item:nth-child(3){
+    margin-right: 0;
+}
+.img-item:hover{
+    opacity: 0.8;
+}
+.product-content{
+    padding: 2rem 1rem;
+}
+.product-title{
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    margin: 1rem 0;
+}
+
+@media screen and (max-width: 768px) {
+    .product-title {
+        font-size: 2rem;
+    }
+}
+
+.product-title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #12263a;
+}
+.product-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    background: #256eff;
+    color: #fff;
+    padding: 0 0.3rem;
+    transition: all 0.5s ease;
+}
+.product-link:hover{
+    opacity: 0.9;
+}
+.product-rating{
+    color: #ffc107;
+}
+.product-rating span{
+    font-weight: 600;
+    color: #252525;
+}
+.product-price{
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.product-price span{
+    font-weight: 400;
+}
+.last-price span{
+    color: #f64749;
+    text-decoration: line-through;
+}
+.new-price span{
+    color: #256eff;
+}
+.product-detail h2{
+    text-transform: capitalize;
+    color: #12263a;
+    padding-bottom: 0.6rem;
+}
+.product-detail p{
+    font-size: 0.9rem;
+    padding: 0.3rem;
+    opacity: 0.8;
+}
+.product-detail ul{
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+.product-detail ul li{
+    margin: 0;
+    list-style: none;
+    background: url(https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/checked.png) left center no-repeat;
+    background-size: 18px;
+    padding-left: 1.7rem;
+    margin: 0.4rem 0;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.product-detail ul li span{
+    font-weight: 400;
+}
+.purchase-info{
+    margin: 1.5rem 0;
+}
+.purchase-info input,
+.purchase-info .btn{
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+.purchase-info input{
+    width: 60px;
+}
+.purchase-info .btn{
+    cursor: pointer;
+    color: #fff;
+}
+.purchase-info .btn:first-of-type{
+    background: #256eff;
+}
+.purchase-info .btn:last-of-type{
+    background: #5047f6;
+}
+.purchase-info .btn:hover{
+    opacity: 0.9;
+}
+.social-links{
+    display: flex;
+    align-items: center;
+}
+.social-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #000;
+    border: 1px solid #000;
+    margin: 0 0.2rem;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.5s ease;
+}
+.social-links a:hover{
+    background: #000;
+    border-color: transparent;
+    color: #fff;
+}
+
+@media screen and (min-width: 992px){
+    .card{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+    .card-wrapper{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .product-imgs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .product-content{
+        padding-top: 0;
+    }
+}
+</style>
+<body>
+    <section>
+        <nav>
+            <a href="index.html"><h2 class="logo">101-dogs</h2></a>
+            <div class="bars">
+              <i class="fa fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+              <li class="nav-link"><a href="index.html">Home</a></li>
+              <li class="nav-link auth"><a href="about-us.html">About Us</a></li>
+              <li class="nav-link auth"><a href="pets.html">Our Pets</a></li>
+              <li class="nav-link auth"><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+          </nav>
+    </section>
+   <section>
+    <section style="background-color: #fff;">
+        <div class = "card-wrapper">
+            <div class = "card">
+              <!-- card left -->
+              <div class = "product-imgs">
+                <div class = "img-display">
+                  <div class = "img-showcase">
+                    <img src = "./dogs-14/img_0740.jpeg" alt = "image" />
+                    <img src = "./dogs-14/04f2675e-916e-46e2-b432-c3d75a67d5e4.jpeg" alt = "image" />
+                    <img src = "./dogs-14/img_0827.jpeg" alt = "image" />
+                    <img src = "./dogs-14/img_0856.jpeg" alt = "image" />
+                    <img src = "./dogs-14/img_0876.jpeg" alt = "image" />
+                  </div>
+                </div>
+                <div class = "img-select">
+                  <div class = "img-item">
+                    <a href = "#" data-id = "1">
+                        <img src = "./dogs-14/img_0740.jpeg" alt = "image" />
+                    </a>
+                  </div>
+                  <div class = "img-item">
+                    <a href = "#" data-id = "2">
+                     <img src = "./dogs-14/04f2675e-916e-46e2-b432-c3d75a67d5e4.jpeg" alt = "image" />
+                    </a>
+                  </div>
+                  <div class = "img-item">
+                    <a href = "#" data-id = "3">
+                        <img src = "./dogs-14/img_0827.jpeg" alt = "image" />
+                    </a>
+                  </div>
+                  <div class = "img-item">
+                    <a href = "#" data-id = "4">
+                        <img src = "./dogs-14/img_0856.jpeg" alt = "image" />
+                    </a>
+                  </div>
+                  <div class = "img-item">
+                    <a href = "#" data-id = "4">
+                        <img src = "./dogs-14/img_0876.jpeg" alt = "image" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card right -->
+              <div class = "product-content">
+                <h2 class = "product-title">Cavapoochons 🌸🐶 </h2>
+          
+                <div class = "product-price">
+                  <span class = "new-price">Price: <b>$1900.00</b></span>
+                </div>
+          
+                <div class = "product-detail">
+                  <h2>Description </h2>
+                  <p> Hi, welcome 🌸 </p>
+                 
+                  <p> 4 girls🌷🐶 <br>
+                    3 boys🐶
+                    <br> <br>
+                    (4 puppies left) </p>
+              
+                  <p> 🔴Please take into consideration I have the right to say no to anybody I don’t think is suitable for my puppies🔴
+                        <br> <br>
+                    🐶🐶My puppies are unique , smart and always in perfect health. <br>
+                <ul>
+                    <li>Breed: <span> Cavapoochon </span></li>
+                    <li>Litter Size: <span> 7 </span></li>
+                    <li>Available: <span> 7 </span></li>
+                    <li>Sex: <span>Boys & Girls</span></li>
+                    <li>Current Age: <span>	7½ weeks</span></li>
+                    <li>Microchipped: <span>Yes</span></li>
+                    <li>Neutered: <span>No</span></li>
+                    <li>Vaccinations up to date: <span>Yes</span></li>
+                  </ul>
+
+                  <div class = "purchase-info">
+                    <span> Age: 7½ weeks </span> &nbsp; &nbsp;
+                    <span>Ready to leave: 3 days</span>
+                    <br> <br>
+                    <img src="./images/dealer_logo.png" style="width: 100px;" alt="" />
+                  </div>
+                </div>
+                <div class = "purchase-info">
+                  <a href="./contact-us.html"><button type = "button" class = "btn">Purchase</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+    <br>
+    <div>
+        <div id="shelby-info">
+
+            <div class="shelby-info-row">
+        
+              <div id="shelby-info-text">
+        
+                <img src="./images/big_logo.png" width="900" height="758" alt="can-nine logo" />
+        
+                <p> Thank you for considering 101 Dog Services for your dog adoption needs. We look forward to helping you find your perfect companion and providing the exceptional care and support you and your dog deserve. Contact us today to begin your journey towards a lifetime of happiness and companionship with a loving canine friend. </p>
+        
+              </div>
+              <div id="shelby-info-images">
+              </div>
+            </div>
+            <img src="./images/bottom_banner_pic.jpeg" alt="" width="100%" />
+          </div>
+        </div>
+    <div id="contact-block">
+        <div class="contact-block-column">
+          <h3>Ready to schedule a consultation?</h3>
+          <div id="contact-buttons-row">
+            <a href="./contact-us.html" title="Contact">Contact Us</a>
+          </div>
+          <br>
+      <p style="color: black;" class="footer-down">101 Dog Service  &copy; 2023</p>    
+        </div> 
+    </div>
+   </section>
+    </div>
+
+    <script src="./script.js"></script>
+ </body>
+</html>
